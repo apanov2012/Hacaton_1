@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    background-size: cover;
+}
+
+.menu {
+    position: absolute;
+    z-index: 1000;
+    width: 243px;
+    /* height: 200px; test */
+    background: #1b1a1a;
+    border-radius: 5px;
+    display: none;
+    list-style: none;
+}
+
+.menu.open {
+    display: block;
+    /* height: 200px; */
+    /* transition: 2s; */
+}
+
+.menu .menu-item {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: #eee;
+    cursor: pointer;
+    transition: background-color .2s ease-in;
+    border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+    background: #343434;
+    font-size: 17px;
+}
+
+.custom-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 35px;
+    text-align: center;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.resultAnalyse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    text-align: center;
+}
+/* xzero */
+.boardGame {
+    display: inline-block;
+    width: 303px;
+    height: 303px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.boardCell {
+    float: right;
+    font-size: 95px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+/*GEOMETRIC FIGURES*/
+
+#square {
+    width: 100px;
+    height: 100px;
+    background: deepskyblue;
+}
+
+#rectangle {
+    width: 200px;
+    height: 100px;
+    background: deepskyblue;
+}
+
+#circle {
+    width: 100px;
+    height: 100px;
+    background: deeppink;
+    border-radius: 50%;
+}
+
+#oval {
+    width: 200px;
+    height: 100px;
+    background: deepskyblue;
+    border-radius: 100px / 50px;
+}
+
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid;
+}
+
+#parallelogram {
+    width: 150px;
+    height: 100px;
+    transform: skew(20deg);
+    background: red;
+}
+
+/* Click Game Style */
+.app {
+    background: #fff;
+    padding: 20px;
+    width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 1px 30px 0 rgba(0, 0, 0, 0.14), 0 0px 0px 0 rgba(0, 0, 0, .12), 0 0px 0px 0px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+}
+
+.app__header {
+    padding: 20px;
+    text-align: center;
+}
+
+.app__content {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.app__footer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.input label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 3px;
+    color: #acacac;
+    font-family: GothamPro, sans-serif;
+    font-size: .8rem;
+    font-weight: normal;
+    line-height: 1.2rem;
+}
+
+.input input {
+    display: block;
+    width: 100%;
+    max-height: 2.8rem;
+    padding: .8rem 1rem;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: 1.4;
+    color: #000;
+    background: #fff none;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+.game {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    background: #ccc;
+    min-height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.btn {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    padding: 1rem 2.3rem;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: GothamPro, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background: #fad64e;
+    color: #3f3f3f;
+    border: none;
+    border-radius: 2.8rem;
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out, -webkit-transform .2s ease-in-out, -webkit-box-shadow .2s ease-in-out;
+    will-change: transform;
+}
+
+.btn:disabled {
+    background: #ccc !important;
+    border: 1px solid #ccc;
+    color: #000;
+    cursor: not-allowed;
+}
+
+.btn:active {
+    transition: transform .1s ease-in-out, box-shadow .1s ease-in-out !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn:hover {
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, .2);
+    transform: translateY(-1px);
+}
+
+/* Стили для таймера */
+
+.blockTimer {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: black;
+    box-shadow: 0 0 200px rgb(46, 145, 125);
+    border: 2px solid;
+    color: rgb(153, 153, 172);
+}
+.stopbtn {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: #000;
+    font-size: 70px;
+    text-align: center;
+}
+
+/* xzero */
+
+.boardGame, .winner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
